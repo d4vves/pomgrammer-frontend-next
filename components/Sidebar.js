@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
-import { useState, useEffect } from 'react'
 import SidebarProject from './SidebarProject'
 import projectData from '../lib/projects.json'
 
@@ -12,7 +12,9 @@ export default function Navbar() {
 
     return (
         <section className={styles.sidebar}>
-            <h1 className={styles.userName}>Dave Stach</h1>
+            <Link href='/profile'>
+                <a><h1 className={styles.userName}>Dave Stach</h1></a>
+            </Link>
             {projectList}
             <p className={styles.projectPom}>07/21/20 - styling</p>
         </section>

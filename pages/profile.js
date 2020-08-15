@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <main className={styles.main}>
         <Sidebar />
-        <h1>DEMO</h1>
+        <h1>Profile</h1>
       </main>
     </>
   )

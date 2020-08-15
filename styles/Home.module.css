@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&family=Pacifico&display=swap');
 
+.main {
+  display: flex;
+}
+
 /*----- NAVBAR -----*/
 .nav {
   width: 100%;
@@ -16,6 +20,10 @@
   color: #df5555;
 }
 
+.logo:hover {
+  color: #c93434;
+}
+
 /*----- SIDEBAR -----*/
 .sidebar {
   width: 15%;
@@ -27,7 +35,12 @@
 
 .userName {
   margin: 0;
+  display: inline-block;
   color: #6d0606;
+}
+
+.userName:hover {
+  color: #c93434;
 }
 
 .projectName {
