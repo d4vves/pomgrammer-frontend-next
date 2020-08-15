@@ -8,10 +8,21 @@ class BubbleChart extends Component {
 	render() {
 		const options = {
             animationEnabled: true,
-            exportEnabled: true,
-            theme: "light1", // "light1", "light2", "dark1", "dark2"
+            theme: "light1",
             axisX: {
-                valueFormatString: 'MMM'
+                valueFormatString: 'MMM',
+                lineColor: 'white',
+                labelFontColor: 'white',
+                tickColor: 'white',
+                gridColor: 'white',
+            },
+            axisY: {
+                lineColor: 'white',
+                labelFontColor: 'white',
+                tickColor: 'white',
+                gridColor: 'white',
+                maximum: 200,
+                minimum: -50
             },
             data: [{
                 type: "bubble",

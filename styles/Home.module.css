@@ -53,12 +53,12 @@
   color: #6d0606;
 }
 
-.projectName:hover {
-  color: #c93434;
-}
-
 .projectToggle {
   padding-right: 0.5vw;
+}
+
+.projectToggle:hover {
+  fill: #c93434;
 }
 
 /*----- SIDEBAR POM -----*/
