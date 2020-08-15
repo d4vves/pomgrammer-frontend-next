@@ -43,11 +43,25 @@
   color: #c93434;
 }
 
+.projectHeader {
+  color: #6d0606;
+}
+
+/*----- SIDEBAR PROJECT -----*/
 .projectName {
   margin: 1vh 0;
   color: #6d0606;
 }
 
+.projectName:hover {
+  color: #c93434;
+}
+
+.projectToggle {
+  padding-right: 0.5vw;
+}
+
+/*----- SIDEBAR POM -----*/
 .projectPom {
   margin: 0 0 0 2vw;
   color: #6d0606

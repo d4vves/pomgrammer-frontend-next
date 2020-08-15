@@ -15,8 +15,8 @@ export default function Navbar() {
             <Link href='/profile'>
                 <a><h1 className={styles.userName}>Dave Stach</h1></a>
             </Link>
+            <h3 className={styles.projectHeader}>Projects</h3>
             {projectList}
-            <p className={styles.projectPom}>07/21/20 - styling</p>
         </section>
     )
 }

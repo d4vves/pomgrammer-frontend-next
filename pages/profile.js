@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
+import Bubbles from '../components/Bubbles'
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
       <Navbar />
       <main className={styles.main}>
         <Sidebar />
-        <h1>Profile</h1>
+        <Bubbles />
       </main>
     </>
   )

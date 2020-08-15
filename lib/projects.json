@@ -1,6 +1,6 @@
 [
-    { "label": "Garbage Boy", "x": "2020, 06, 09", "y": 64, "z": 64 },
-    { "label": "Anical", "x": "2020, 07, 02", "y": 51, "z": 51 },
-    { "label": "World of Wonder", "x": "2020-07-24", "y": 83, "z": 83 },
-    { "label": "Pomgrammer", "x": "2020-08-14", "y": 1, "z": 1 }
+    { "id": 1, "label": "Garbage Boy", "x": "2020, 06, 09", "y": 64, "z": 64 },
+    { "id": 2, "label": "Anical", "x": "2020, 07, 02", "y": 51, "z": 51 },
+    { "id": 3, "label": "World of Wonder", "x": "2020-07-24", "y": 83, "z": 83 },
+    { "id": 4, "label": "Pomgrammer", "x": "2020-08-14", "y": 1, "z": 1 }
 ]
