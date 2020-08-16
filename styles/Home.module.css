@@ -2,11 +2,13 @@
 
 .main {
   display: flex;
+  height: 90vh;
 }
 
 /*----- NAVBAR -----*/
 .nav {
   width: 100%;
+  max-height: 5vw;
   margin: 0;
   padding: 1vw 2vw 1vw 2vw;
   text-align: right;
@@ -27,7 +29,7 @@
 /*----- SIDEBAR -----*/
 .sidebar {
   width: 15%;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 1vh;
   border-right: 1px dashed #6d0606;
@@ -36,14 +38,6 @@
 .userName {
   margin: 0;
   display: inline-block;
-  color: #6d0606;
-}
-
-.userName:hover {
-  color: #c93434;
-}
-
-.projectHeader {
   color: #6d0606;
 }
 

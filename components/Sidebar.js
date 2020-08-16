@@ -1,21 +1,18 @@
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import SidebarProject from './SidebarProject'
-import projectData from '../lib/projects.json'
 
-export default function Navbar() {
-    let projectList = projectData.length < 1 ?
+export default function Navbar(props) {
+    let projectList = props.projects.length < 1 ?
     <h3 className={styles.ProjectName}>No current projects.</h3> :
-    projectData.map(project => (
+    props.projects.map(project => (
         <SidebarProject {...project}/>
     ))
 
     return (
         <section className={styles.sidebar}>
-            <Link href='/profile'>
-                <a><h1 className={styles.userName}>Dave Stach</h1></a>
-            </Link>
-            <h3 className={styles.projectHeader}>Projects</h3>
+            <h1 className={styles.userName}>Dave Stach</h1>
+            <h4 onClick={props.addProject}>+ Add Project</h4>
             {projectList}
         </section>
     )

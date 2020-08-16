@@ -27,6 +27,7 @@ export default function SidebarProject(props) {
                 <span onClick={toggleExpand} className={styles.projectToggle}>{expanded ? <Expanded /> : <Unexpanded />}</span>
                 {props.label}
             </h4>
+            {expanded ? <p className={styles.projectPom}>+ Add POM</p> : <></>}
             {pomList}
         </>
     )

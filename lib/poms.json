@@ -1,6 +1,6 @@
 [
-    { "id": 1, "focus": "gb constructor function", "projectId": 1 },
-    { "id": 2, "focus": "navbar css", "projectId": 2 },
-    { "id": 3, "focus": "artifact routes", "projectId": 3 },
-    { "id": 4, "focus": "boilerplate setup", "projectId": 4 }
+    { "focus": "gb constructor function", "projectId": 1 },
+    { "focus": "navbar css", "projectId": 2 },
+    { "focus": "artifact routes", "projectId": 3 },
+    { "focus": "boilerplate setup", "projectId": 4 }
 ]
