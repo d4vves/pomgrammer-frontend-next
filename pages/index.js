@@ -1,8 +1,8 @@
 export default function Home() {
 
   return (
-    <>
-      <h1>DEMO PAGE</h1>
-    </>
+    <div>
+      <h1>DEMO</h1>
+    </div>
   )
 }

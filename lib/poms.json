@@ -1,6 +1,6 @@
 [
-    { "focus": "gb constructor function", "projectId": 1 },
-    { "focus": "navbar css", "projectId": 2 },
-    { "focus": "artifact routes", "projectId": 3 },
-    { "focus": "boilerplate setup", "projectId": 4 }
+    { "focus": "gb constructor function", "projectId": 1, "createdAt": "2020, 06, 09" },
+    { "focus": "navbar css", "projectId": 2, "createdAt": "2020, 06, 09" },
+    { "focus": "artifact routes", "projectId": 3, "createdAt": "2020, 06, 09" },
+    { "focus": "boilerplate setup", "projectId": 4, "createdAt": "2020, 06, 09" }
 ]
