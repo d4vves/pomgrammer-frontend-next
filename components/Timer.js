@@ -1,52 +1,86 @@
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import styles from '../styles/Home.module.css'
 
-export default function Timer() {
+export default function Timer({setPoms, poms, setShowPoms}) {
+    const router = useRouter()
+    const { id } = router.query
+
     let [minutes, setMinutes] = useState(0)
     let [seconds, setSeconds] = useState(10)
     let [breakTime, setBreakTime] = useState(false)
     let [finished, setFinished] = useState(false)
-     
+    let [focus, setFocus] = useState('')
 
-    useEffect(() => {
+    const runTimer = () => {
         const pomInterval = setInterval(() => {
-        if (seconds > 0) {
-            setSeconds(seconds -= 1)
-        }
-        if (seconds <= 0) {
-            if (minutes === 0) {
-                if (!breakTime) {
-                    setSeconds(5)
-                    setBreakTime(true)
+            if (seconds > 0) {
+                setSeconds(seconds -= 1)
+            }
+            if (seconds <= 0) {
+                if (minutes === 0) {
+                    if (!breakTime) {
+                        setSeconds(5)
+                        setBreakTime(true)
+                    } else {
+                        clearInterval(pomInterval)
+                        setFinished(true)
+                    }
                 } else {
-                    clearInterval(pomInterval)
-                    setFinished(true)
-                }
-            } else {
-                setMinutes(minutes -= 1)
-                setSeconds(59)
+                    setMinutes(minutes -= 1)
+                    setSeconds(59)
                 }
             }
         }, 1000)
         return () => {clearInterval(pomInterval)}
-    })
+    }
+
+    useEffect(runTimer, [breakTime])
+
+    const handleFocus = (event) => {
+        setFocus(event.target.value)
+    }
+
+    const addPom = (event) => {
+        event.preventDefault()
+        console.log(poms)
+        const newPom = {
+            focus: focus,
+            projectId: id
+        }
+        setPoms([newPom, ...poms])
+        setMinutes(0)
+        setSeconds(10)
+        setBreakTime(false)
+        setFinished(false)
+        setFocus('')
+        setShowPoms(true)
+    }
 
     return (
-        <>
+        <div>
             {
                 !finished ? 
                     !breakTime ?
                         <div>
-                            <h1>Get to work!</h1>
+                            <h1>Let 'er rip!</h1>
                             <h1>Time Remaining: {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
                         </div>
                     :
                         <div>
-                            <h1>Step away from the computer!</h1>
+                            <h1>Break time!</h1>
                             <h1>Time Remaining: {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
                         </div>
                 :
-                    <h1>FORM</h1>
+                    <div>
+                        <h1>Great job!</h1>
+                        <form onSubmit={addPom}>
+                            <label for='focus'>What did you focus on? </label>
+                            <input type='text' name='focus' id='focus' onChange={handleFocus} />
+                            <input type='submit' value='add pom' />
+                        </form>
+                    </div>
             }
-        </>
+        </div>
     )
 }

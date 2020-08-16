@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import CanvasJSReact from '../lib/canvasjs.react'
-import projectData from '../lib/projects.json'
 let CanvasJSChart = CanvasJSReact.CanvasJSChart
 let dataPoints = []
  
-class BubbleChart extends Component {
+class Bubbles extends Component {
 	render() {
 		const options = {
             animationEnabled: true,
@@ -39,7 +38,7 @@ class BubbleChart extends Component {
 
     componentDidMount(){
 		var chart = this.chart
-        projectData.forEach(project => {
+        this.props.projects.forEach(project => {
             dataPoints.push({
                 label: project.label,
                 x: new Date(project.x),
@@ -51,4 +50,4 @@ class BubbleChart extends Component {
 	}
 }
 
-export default BubbleChart
+export default Bubbles
