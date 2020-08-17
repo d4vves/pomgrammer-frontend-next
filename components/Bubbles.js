@@ -48,7 +48,14 @@ class Bubbles extends Component {
             })
         })
         chart.render()
-	}
+    }
+    
+    componentDidUpdate(prevProps) {
+        if (this.props.projects.length !== prevProps.projects.length) {
+            var chart = this.chart
+            chart.update()
+        }
+    }
 }
 
 export default Bubbles

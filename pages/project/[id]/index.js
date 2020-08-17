@@ -4,7 +4,7 @@ import Pom from '../../../components/Pom'
 import Timer from '../../../components/Timer'
 import styles from '../../../styles/Home.module.css'
 
-export default function Project({poms, projects, setPoms}) {
+export default function Project({poms, projects, setPoms, setProjects}) {
     const router = useRouter()
     const { id } = router.query
 
@@ -28,11 +28,17 @@ export default function Project({poms, projects, setPoms}) {
         setShowPoms(false)
     }
 
+    const deleteProject = () => {
+        projects.shift(currentProject)
+        router.push('/profile')
+    }
+
     return (
         <div className={styles.mainProject}>
-            <h1>{currentProject}</h1>
             {showPoms ?
                 <>
+                    <h1>{currentProject}</h1>
+                    <p onClick={deleteProject}>delete project</p>
                     <h3>POMs</h3>
                     <p onClick={toggleAdd}>+ add pom</p>
                     {pomList}
