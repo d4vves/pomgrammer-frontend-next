@@ -3,7 +3,7 @@ import CanvasJSReact from '../lib/canvasjs.react'
 let CanvasJSChart = CanvasJSReact.CanvasJSChart
 let dataPoints = []
  
-class BubblesDemo extends Component {
+class Bubbles extends Component {
 	render() {
 		const options = {
             animationEnabled: true,
@@ -26,7 +26,7 @@ class BubblesDemo extends Component {
             data: [{
                 type: "bubble",
                 indexLabel: "{label}",
-                toolTipContent: "<b>{label}</b><br>Date Started: {x}<br>POMs: {y}",
+                toolTipContent: "<b>{label}</b><br>Date Started: {x}<br>Time Spent: {time} mins.<br>POMs: {y}",
                 dataPoints: dataPoints
             }]
         }
@@ -43,11 +43,12 @@ class BubblesDemo extends Component {
                 label: project.label,
                 x: new Date(project.createdAt),
                 y: project.poms,
-                z: project.poms
+                z: project.poms,
+                time: project.poms * 25
             })
         })
         chart.render()
 	}
 }
 
-export default BubblesDemo
+export default Bubbles

@@ -1,6 +1,12 @@
 [
-    { "focus": "gb constructor function", "projectId": 1, "createdAt": "2020, 06, 09" },
-    { "focus": "navbar css", "projectId": 2, "createdAt": "2020, 06, 09" },
-    { "focus": "artifact routes", "projectId": 3, "createdAt": "2020, 06, 09" },
+    { "focus": "rat constructor added, refactored rat functions", "projectId": 1, "createdAt": "2020, 06, 10" },
+    { "focus": "reset button", "projectId": 1, "createdAt": "2020, 06, 10" },
+    { "focus": "garbage pick up sound bug", "projectId": 1, "createdAt": "2020, 06, 10" },
+    { "focus": "index, season and individual get routes", "projectId": 2, "createdAt": "2020, 07, 04" },
+    { "focus": "if/else for add and delete buttons", "projectId": 2, "createdAt": "2020, 07, 05" },
+    { "focus": "prompt and character models", "projectId": 2, "createdAt": "2020, 07, 06" },
+    { "focus": "season page", "projectId": 2, "createdAt": "2020, 07, 07" },
+    { "focus": "backend route stubs", "projectId": 3, "createdAt": "2020, 07, 23" },
+    { "focus": "GET and GET id routes", "projectId": 3, "createdAt": "2020, 07, 24" },
     { "focus": "boilerplate setup", "projectId": 4, "createdAt": "2020, 06, 09" }
 ]

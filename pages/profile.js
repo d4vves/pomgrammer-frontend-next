@@ -1,5 +1,7 @@
-export default function Profile(props) {
+import Bubbles from '../components/Bubbles'
+
+export default function Profile({projects}) {
     return (
-        <h1>PROFILE</h1>
+        <Bubbles projects={projects} />
     )
 }
