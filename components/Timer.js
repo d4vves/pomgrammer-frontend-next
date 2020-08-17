@@ -7,35 +7,38 @@ export default function Timer({setPoms, poms, setShowPoms, projects}) {
     const { id } = router.query
 
     let [minutes, setMinutes] = useState(0)
-    let [seconds, setSeconds] = useState(10)
+    let [seconds, setSeconds] = useState(5)
     let [breakTime, setBreakTime] = useState(false)
     let [finished, setFinished] = useState(false)
     let [focus, setFocus] = useState('')
+    let [startTimer, setStartTimer] = useState(false)
 
     const runTimer = () => {
-        const pomInterval = setInterval(() => {
-            if (seconds > 0) {
-                setSeconds(seconds -= 1)
-            }
-            if (seconds <= 0) {
-                if (minutes === 0) {
-                    if (!breakTime) {
-                        setSeconds(5)
-                        setBreakTime(true)
-                    } else {
-                        clearInterval(pomInterval)
-                        setFinished(true)
-                    }
-                } else {
-                    setMinutes(minutes -= 1)
-                    setSeconds(59)
+        if (startTimer) {
+            const pomInterval = setInterval(() => {
+                if (seconds > 0) {
+                    setSeconds(seconds -= 1)
                 }
-            }
-        }, 1000)
-        return () => {clearInterval(pomInterval)}
+                if (seconds <= 0) {
+                    if (minutes === 0) {
+                        if (!breakTime) {
+                            setSeconds(3)
+                            setBreakTime(true)
+                        } else {
+                            clearInterval(pomInterval)
+                            setFinished(true)
+                        }
+                    } else {
+                        setMinutes(minutes -= 1)
+                        setSeconds(59)
+                    }
+                }
+            }, 1000)
+            return () => {clearInterval(pomInterval)}
+        }
     }
 
-    useEffect(runTimer, [breakTime])
+    useEffect(runTimer, [breakTime, startTimer])
 
     const handleFocus = (event) => {
         setFocus(event.target.value)
@@ -53,11 +56,16 @@ export default function Timer({setPoms, poms, setShowPoms, projects}) {
         event.preventDefault()
         let newPom = {
             focus: focus,
-            projectId: id
+            projectId: id,
+            createdAt: new Date()
         }
         setPoms([newPom, ...poms])
         enumeratePoms()
         setShowPoms(true)
+    }
+
+    const enableTimer = () => {
+        setStartTimer(true)
     }
 
     return (
@@ -68,6 +76,7 @@ export default function Timer({setPoms, poms, setShowPoms, projects}) {
                         <div>
                             <h1>Let 'er rip!</h1>
                             <h1>Time Remaining: {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                            <button onClick={enableTimer}>Start</button>
                         </div>
                     :
                         <div>

@@ -39,7 +39,6 @@
   margin: 0;
   padding: 1vh;
   border-right: 1px dashed #6d0606;
-  color: #6d0606;
 }
 
 .userName {
@@ -80,4 +79,14 @@
 .addProjectForm {
   display: flex;
   flex-direction: column;
+}
+
+/*----- DEMO -----*/
+.demo {
+  width: 100%;
+  text-align: center;
+}
+
+.hide {
+  display: none;
 }
