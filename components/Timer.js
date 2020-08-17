@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
 
-export default function Timer({setPoms, poms, setShowPoms}) {
+export default function Timer({setPoms, poms, setShowPoms, projects}) {
     const router = useRouter()
     const { id } = router.query
 
@@ -41,6 +41,14 @@ export default function Timer({setPoms, poms, setShowPoms}) {
         setFocus(event.target.value)
     }
 
+    const enumeratePoms = () => {
+        projects.forEach(project => {
+            if (project.id == id) {
+                project.poms += 1
+            }
+        })
+    }
+
     const addPom = (event) => {
         event.preventDefault()
         let newPom = {
@@ -48,11 +56,7 @@ export default function Timer({setPoms, poms, setShowPoms}) {
             projectId: id
         }
         setPoms([newPom, ...poms])
-        setMinutes(0)
-        setSeconds(10)
-        setBreakTime(false)
-        setFinished(false)
-        setFocus('')
+        enumeratePoms()
         setShowPoms(true)
     }
 

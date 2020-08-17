@@ -20,7 +20,8 @@ export default function NewProject({projects, setProjects}) {
         let newProject = {
             id: projects.length + 1,
             label: label,
-            githubUrl: githubUrl
+            githubUrl: githubUrl,
+            poms: 0
         }
         setProjects([newProject, ...projects])
         router.push('/project/[id]', `/project/${newProject.id}`)

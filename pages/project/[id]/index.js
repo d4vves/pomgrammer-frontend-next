@@ -38,7 +38,7 @@ export default function Project({poms, projects, setPoms}) {
                     {pomList}
                 </>
             :
-                <Timer setPoms={setPoms} poms={poms} setShowPoms={setShowPoms} />
+                <Timer setPoms={setPoms} poms={poms} setShowPoms={setShowPoms} projects={projects} />
             }
         </div>
     )
