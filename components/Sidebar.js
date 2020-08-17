@@ -14,7 +14,9 @@ export default function Sidebar(props) {
             <Link href='/profile'>
                 <a><h1 className={styles.userName}>Dave Stach</h1></a>
             </Link>
-            <h4 onClick={props.addProject}>+ Add Project</h4>
+            <Link href='/newproject'>
+                <a><h4 className={styles.addProject} onClick={props.addProject}>+ Add Project</h4></a>
+            </Link>
             {projectList}
         </section>
     )
