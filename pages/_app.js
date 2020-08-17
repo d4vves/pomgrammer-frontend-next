@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <main className={styles.main}>
         <Sidebar projects={projects} />
-        <Component {...pageProps} projects={projects} poms={poms} setPoms={setPoms} />
+        <Component {...pageProps} projects={projects} setProjects={setProjects} poms={poms} setPoms={setPoms} />
       </main>
     </>
   )

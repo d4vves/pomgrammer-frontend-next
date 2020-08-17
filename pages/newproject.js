@@ -1,14 +1,37 @@
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
 
-export default function NewProject() {
+export default function NewProject({projects, setProjects}) {
+    const router = useRouter()
+    let [label, setLabel] = useState('')
+    let [githubUrl, setGithubUrl] = useState('')
+
+    const handleLable = (event) => {
+        setLabel(event.target.value)
+    }
+
+    const handleGithubUrl = (event) => {
+        setGithubUrl(event.target.value)
+    }
+
+    const addProject = (event) => {
+        event.preventDefault()
+        let newProject = {
+            id: projects.length + 1,
+            label: label,
+            githubUrl: githubUrl
+        }
+        setProjects([newProject, ...projects])
+        router.push('/project/[id]', `/project/${newProject.id}`)
+    }
+
     return (
-        <form className={styles.addProjectForm}>
+        <form className={styles.addProjectForm} onSubmit={addProject}>
             <label for='label'>Project Name </label>
-            <input type='text' name='label' id='name' />
-            <label for='description'>Description </label>
-            <input type='text' name='description' id='description' />
+            <input type='text' name='label' id='name' onChange={handleLable} />
             <label for='githubUrl'>Github URL </label>
-            <input type='text' name='githubUrl' id='githubUrl' />
+            <input type='text' name='githubUrl' id='githubUrl' onChange={handleGithubUrl} />
             <input type='submit' value='Add Project' />
         </form>
     )

@@ -43,8 +43,7 @@ export default function Timer({setPoms, poms, setShowPoms}) {
 
     const addPom = (event) => {
         event.preventDefault()
-        console.log(poms)
-        const newPom = {
+        let newPom = {
             focus: focus,
             projectId: id
         }
