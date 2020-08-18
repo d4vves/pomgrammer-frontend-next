@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import useSound from 'use-sound'
+import Beep from '../lib/beep.mp3'
 import styles from '../styles/Home.module.css'
 
 export default function Timer({setPoms, poms, setShowPoms, projects}) {
     const router = useRouter()
     const { id } = router.query
+
+    const [play] = useSound(Beep)
 
     let [minutes, setMinutes] = useState(0)
     let [seconds, setSeconds] = useState(5)
@@ -24,7 +28,9 @@ export default function Timer({setPoms, poms, setShowPoms, projects}) {
                         if (!breakTime) {
                             setSeconds(3)
                             setBreakTime(true)
+                            play()
                         } else {
+                            play()
                             clearInterval(pomInterval)
                             setFinished(true)
                         }
