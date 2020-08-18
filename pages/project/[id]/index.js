@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import Github from '../../../components/svg/Github'
 import Pom from '../../../components/Pom'
 import Timer from '../../../components/Timer'
 import styles from '../../../styles/Home.module.css'
@@ -12,7 +13,7 @@ export default function Project({poms, projects, setPoms, deletePom}) {
 
     let currentProject = projects.map(project => {
         if (project.id == id) {
-            return project.label
+            return project
         }
     })
 
@@ -37,7 +38,7 @@ export default function Project({poms, projects, setPoms, deletePom}) {
         <>
             {showPoms ?
                 <div className={styles.mainProject}>
-                    <h1>{currentProject}</h1>
+                    <h1>{currentProject[0].label} <a href={currentProject[0].githubUrl} target='_blank'><Github /></a></h1>
                     <p onClick={deleteProject}>delete project</p>
                     <h3>POMs</h3>
                     <p onClick={toggleAdd}>+ add pom</p>
