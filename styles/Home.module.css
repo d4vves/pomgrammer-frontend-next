@@ -66,6 +66,10 @@
   font-size: 2em;
 }
 
+.userStats {
+  margin: 0 0 0 1vw;
+}
+
 .addProject {
   margin-bottom: 0;
 }

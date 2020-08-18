@@ -21,7 +21,8 @@ export default function NewProject({projects, setProjects}) {
             id: projects.length + 1,
             label: label,
             githubUrl: githubUrl,
-            poms: 0
+            poms: 0,
+            createdAt: new Date()
         }
         setProjects([newProject, ...projects])
         router.push('/project/[id]', `/project/${newProject.id}`)

@@ -24,8 +24,8 @@ export default function Sidebar({projects}) {
             <Link href='/profile'>
                 <a><h1 className={styles.userName}>Dave Stach</h1></a>
             </Link>
-            <h5>Projects: {projectCount}</h5>
-            <h5>Time Pomgramming: {timeCount} minutes</h5>
+            <h5 className={styles.userStats}>Projects: {projectCount}</h5>
+            <h5 className={styles.userStats}>Time Pomgramming: {timeCount} minutes</h5>
             <Link href='/newproject'>
                 <a><h4 className={styles.addProject}>+ Add Project</h4></a>
             </Link>
