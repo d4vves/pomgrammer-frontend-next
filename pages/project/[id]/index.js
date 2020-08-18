@@ -34,18 +34,18 @@ export default function Project({poms, projects, setPoms, setProjects}) {
     }
 
     return (
-        <div className={styles.mainProject}>
+        <>
             {showPoms ?
-                <>
+                <div className={styles.mainProject}>
                     <h1>{currentProject}</h1>
                     <p onClick={deleteProject}>delete project</p>
                     <h3>POMs</h3>
                     <p onClick={toggleAdd}>+ add pom</p>
                     {pomList}
-                </>
+                </div>
             :
                 <Timer setPoms={setPoms} poms={poms} setShowPoms={setShowPoms} projects={projects} />
             }
-        </div>
+        </>
     )
 }

@@ -33,7 +33,7 @@ export default function NewProject({projects, setProjects}) {
             <input type='text' name='label' id='name' onChange={handleLable} />
             <label for='githubUrl'>Github URL </label>
             <input type='text' name='githubUrl' id='githubUrl' onChange={handleGithubUrl} />
-            <input type='submit' value='Add Project' />
+            <input className={styles.button} type='submit' value='Add Project' />
         </form>
     )
 }

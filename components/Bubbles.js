@@ -20,8 +20,8 @@ class Bubbles extends Component {
                 labelFontColor: 'white',
                 tickColor: 'white',
                 gridColor: 'white',
-                maximum: 200,
-                minimum: -50
+                maximum: 50,
+                minimum: -10
             },
             data: [{
                 type: "bubble",
