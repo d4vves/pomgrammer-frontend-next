@@ -13,6 +13,7 @@ Pomgrammer is an idea built upon my own obsessive tendancies. I prefer to vizual
 npm install
 ```
 
+## initial wireframe
 ![wireframe](public/wireframe.png)
 
 ## next steps
