@@ -4,7 +4,7 @@ import Pom from '../../../components/Pom'
 import Timer from '../../../components/Timer'
 import styles from '../../../styles/Home.module.css'
 
-export default function Project({poms, projects, setPoms, setProjects}) {
+export default function Project({poms, projects, setPoms, deletePom}) {
     const router = useRouter()
     const { id } = router.query
 
@@ -18,9 +18,9 @@ export default function Project({poms, projects, setPoms, setProjects}) {
 
     let pomList = poms.length < 1 ?
     <p className={styles.projectPom}></p> :
-    poms.map(pom => {
+    poms.map((pom, i) => {
         if (pom.projectId == id) {
-            return <Pom {...pom}/>
+            return <Pom key={i} index={i} pom={pom} deletePom={deletePom} poms={poms} setPoms={setPoms} setShowPoms={setShowPoms} projects={projects} />
         }
     })
 

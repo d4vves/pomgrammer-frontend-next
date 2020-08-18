@@ -54,7 +54,7 @@
 
 /*----- SIDEBAR -----*/
 .sidebar {
-  width: 15%;
+  width: 20%;
   height: 100%;
   margin: 0;
   padding: 1vh;
@@ -63,6 +63,7 @@
 
 .userName {
   margin: 0;
+  font-size: 2em;
 }
 
 .addProject {
