@@ -11,11 +11,9 @@ export default function Project({poms, projects, setPoms, deletePom}) {
 
     const [showPoms, setShowPoms] = useState(true)
 
-    let currentProject = projects.map(project => {
-        if (project.id == id) {
-            return project
-        }
-    })
+    let currentProject = projects.filter(project => project.id == id)
+
+    console.log(currentProject)
 
     let pomList = poms.length < 1 ?
     <p className={styles.projectPom}></p> :

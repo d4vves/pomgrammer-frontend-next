@@ -82,7 +82,7 @@ export default function Timer({setPoms, poms, setShowPoms, projects}) {
                         <div>
                             <h1>Let 'er rip!</h1>
                             <h1>Time Remaining: {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
-                            <button onClick={enableTimer}>Start</button>
+                            <button className={styles.button} onClick={enableTimer}>Start</button>
                         </div>
                     :
                         <div>
@@ -92,10 +92,10 @@ export default function Timer({setPoms, poms, setShowPoms, projects}) {
                 :
                     <div>
                         <h1>Great job!</h1>
-                        <form onSubmit={addPom}>
+                        <form className={styles.addProjectForm} onSubmit={addPom}>
                             <label for='focus'>What did you focus on? </label>
                             <input type='text' name='focus' id='focus' onChange={handleFocus} />
-                            <input type='submit' value='add pom' />
+                            <input className={styles.button} type='submit' value='add pom' />
                         </form>
                     </div>
             }
