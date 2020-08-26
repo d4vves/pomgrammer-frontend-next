@@ -25,7 +25,7 @@ export default function Login({nowCurrentUser}) {
             email: email,
             password: password
         }
-        axios.post(`http://localhost:2001/login`, userData)
+        axios.post(`${process.env.NEXT_PUBLIC_API}/login`, userData)
         .then(response => {
             const { token } = response.data
             localStorage.setItem('jwtToken', token)

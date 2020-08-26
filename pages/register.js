@@ -48,7 +48,7 @@ export default function Register() {
             github: github,
             linkedin: linkedin
         }
-        axios.post(`http://localhost:2001/register`, newUser)
+        axios.post(`${process.env.NEXT_PUBLIC_API}/register`, newUser)
         .then(response => {
             router.push('/login')
         })
