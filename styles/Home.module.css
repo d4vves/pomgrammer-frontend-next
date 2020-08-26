@@ -67,6 +67,17 @@
   font-size: 2em;
 }
 
+.logoutButton {
+  margin-bottom: 2vh;
+  background-color: #ffffff;
+  color: #6d0606;
+  border: none;
+}
+
+.logoutButton:hover {
+  color: #df5555;
+}
+
 .userStats {
   margin: 0 0 0 1vw;
 }
