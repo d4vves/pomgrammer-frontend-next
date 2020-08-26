@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 import SidebarProject from './SidebarProject'
 import { useEffect } from 'react'
 
-export default function Sidebar({projects}) {
+export default function Sidebar({projects, currentUser}) {
     let projectList = projects.length < 1 ?
     <h3 className={styles.ProjectName}>No current projects.</h3> :
     projects.map((project, i) => (
@@ -21,9 +21,17 @@ export default function Sidebar({projects}) {
 
     return (
         <section className={styles.sidebar}>
-            <Link href='/profile'>
-                <a><h1 className={styles.userName}>Dave Stach</h1></a>
-            </Link>
+            {!currentUser ? 
+            <p>
+                <Link href='/register'><a>Register </a></Link>
+                or
+                <Link href='/login'><a> Login</a></Link>
+            </p>
+            :
+                <Link href='/profile'>
+                    <a><h1 className={styles.userName}>{currentUser.name}</h1></a>
+                </Link>
+            }
             <h5 className={styles.userStats}>Projects: {projectCount}</h5>
             <h5 className={styles.userStats}>Time Pomgramming: {timeCount} minutes</h5>
             <Link href='/newproject'>

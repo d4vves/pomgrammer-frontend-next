@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CanvasJSReact from '../lib/canvasjs.react'
+import CanvasJSReact from '../utils/canvasjs.react'
 let CanvasJSChart = CanvasJSReact.CanvasJSChart
 let dataPoints = []
  
@@ -37,7 +37,7 @@ class Bubbles extends Component {
     }
 
     componentDidMount(){
-		var chart = this.chart
+        var chart = this.chart
         this.props.projects.forEach(project => {
             dataPoints.push({
                 label: project.label,
@@ -51,7 +51,7 @@ class Bubbles extends Component {
     }
     
     componentDidUpdate(prevProps) {
-        if (this.props.projects.length !== prevProps.projects.length) {
+        if (this.props.projects.length !== prevProps.projects.length || this.props.poms.length !== prevProps.poms.length) {
             var chart = this.chart
             chart.update()
         }

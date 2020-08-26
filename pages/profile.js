@@ -1,7 +1,5 @@
-import Bubbles from '../components/Bubbles'
-
-export default function Profile({projects}) {
+export default function Profile({projects, poms}) {
     return (
-        <Bubbles projects={projects} />
+        <h1>D3 COMING SOON</h1>
     )
 }
