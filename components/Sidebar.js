@@ -4,6 +4,7 @@ import SidebarProject from './SidebarProject'
 import { useEffect } from 'react'
 
 export default function Sidebar({projects, currentUser}) {
+    console.log(currentUser)
     let projectList = projects.length < 1 ?
     <h3 className={styles.ProjectName}>No current projects.</h3> :
     projects.map((project, i) => (
@@ -29,7 +30,7 @@ export default function Sidebar({projects, currentUser}) {
             </p>
             :
                 <Link href='/profile'>
-                    <a><h1 className={styles.userName}>{currentUser.name}</h1></a>
+                    <a><h1 className={styles.userName}>{currentUser._doc.name}</h1></a>
                 </Link>
             }
             <h5 className={styles.userStats}>Projects: {projectCount}</h5>

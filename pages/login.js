@@ -16,7 +16,7 @@ export default function Login({nowCurrentUser}) {
     }
 
     const handlePassword = (e) => {
-        setEmail(e.target.value)
+        setPassword(e.target.value)
     }
 
     const handleSubmit = (e) => {

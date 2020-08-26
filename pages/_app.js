@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }) {
 
       <Navbar />
       <main className={styles.main}>
-        <Sidebar user={currentUser} projects={projects} />
+        <Sidebar currentUser={currentUser} projects={projects} />
         <Component {...pageProps} user={currentUser} nowCurrentUser={nowCurrentUser} projects={projects} setProjects={setProjects} poms={poms} setPoms={setPoms} />
       </main>
     </>

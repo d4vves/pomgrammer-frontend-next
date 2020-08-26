@@ -13,8 +13,6 @@ export default function Project({poms, projects, setPoms, deletePom}) {
 
     let currentProject = projects.filter(project => project.id == id)
 
-    console.log(currentProject)
-
     let pomList = poms.length < 1 ?
     <p className={styles.projectPom}></p> :
     poms.map((pom, i) => {
