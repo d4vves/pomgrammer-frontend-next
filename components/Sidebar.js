@@ -4,21 +4,18 @@ import SidebarProject from './SidebarProject'
 import { useEffect } from 'react'
 
 export default function Sidebar({projects, currentUser, handleLogout}) {
-    console.log(currentUser)
     let projectList = projects.length < 1 ?
     <h3 className={styles.ProjectName}>No current projects.</h3> :
     projects.map((project, i) => (
         <SidebarProject key={i} {...project}/>
     ))
 
-    let projectCount = projects.length
+    // let pomCount = 0
+    // projects.forEach(project => {
+    //     pomCount = pomCount + project.poms
+    // })
 
-    let pomCount = 0
-    projects.forEach(project => {
-        pomCount = pomCount + project.poms
-    })
-
-    let timeCount = pomCount * 25
+    // let timeCount = pomCount * 25
 
     return (
         <section className={styles.sidebar}>
@@ -36,8 +33,8 @@ export default function Sidebar({projects, currentUser, handleLogout}) {
                     <button className={styles.logoutButton} onClick={handleLogout}>Sign Out</button>
                 </div>
             }
-            <h5 className={styles.userStats}>Projects: {projectCount}</h5>
-            <h5 className={styles.userStats}>Time Pomgramming: {timeCount} minutes</h5>
+            <h5 className={styles.userStats}>Projects: {projects.length} </h5>
+            <h5 className={styles.userStats}>Time Pomgramming:  minutes</h5>
             <Link href='/newproject'>
                 <a><h4 className={styles.addProject}>+ Add Project</h4></a>
             </Link>

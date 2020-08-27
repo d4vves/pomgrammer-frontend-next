@@ -7,7 +7,7 @@ export default function SidebarProject(props) {
         <>
             <h4 className={styles.projectName}>
                 <Link href={'/project/[id]'} as={`/project/${props.id}`} >
-                    <a>{props.label}</a>
+                    <a>{props.title}</a>
                 </Link>
             </h4>
         </>
