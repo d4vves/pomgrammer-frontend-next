@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import setAuthToken from '../utils/setAuthToken'
-import axios from 'axios'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
@@ -9,10 +9,9 @@ import '../styles/globals.css'
 import styles from '../styles/Home.module.css'
 
 function MyApp({ Component, pageProps }) {
-  const [projects, setProjects] = useState([])
-
   let [currentUser, setCurrentUser] = useState('')
   let [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [projects, setProjects] = useState([])
 
   useEffect(() => {
     let token
@@ -40,11 +39,16 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
-    axios.get(`${process.env.NEXT_PUBLIC_API}/projects`, currentUser)
-    .then(response => {
-      setProjects(response.data)
-    })
-  }, [])
+    if (currentUser) {
+      axios.get(`${process.env.NEXT_PUBLIC_API}/projects`)
+      .then(response => {
+        if (response.status === 200) {
+          setProjects(response.data)
+        }
+      })
+      .catch(err => console.log(`🚦 ${err} 🚦`))
+    }
+  }, [currentUser])
 
   return (
     <>
@@ -56,7 +60,7 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <main className={styles.main}>
         <Sidebar currentUser={currentUser} handleLogout={handleLogout} projects={projects} />
-        <Component {...pageProps} user={currentUser} nowCurrentUser={nowCurrentUser} projects={projects} />
+        <Component {...pageProps} user={currentUser} nowCurrentUser={nowCurrentUser} />
       </main>
     </>
   )

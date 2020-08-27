@@ -78,12 +78,8 @@
   color: #df5555;
 }
 
-.userStats {
-  margin: 0 0 0 1vw;
-}
-
 .addProject {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 /*----- SIDEBAR PROJECT -----*/
@@ -123,10 +119,6 @@
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-}
-
-.addProjectForm > * {
-  margin: 1vh;
 }
 
 /*----- DEMO -----*/
